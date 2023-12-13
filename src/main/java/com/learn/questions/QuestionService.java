@@ -101,4 +101,8 @@ public class QuestionService {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
     }
+
+    public List<Question> findByCategory(String category) {
+        return questionRepository.findByCategory(category);
+    }
 }

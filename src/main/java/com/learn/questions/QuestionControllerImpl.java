@@ -1,5 +1,6 @@
 package com.learn.questions;
 
+import com.learn.model.Question;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

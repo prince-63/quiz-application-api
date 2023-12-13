@@ -1,4 +1,4 @@
-package com.learn.questions;
+package com.learn.model;
 
 
 import jakarta.persistence.Entity;

@@ -1,5 +1,6 @@
 package com.learn.questions;
 
+import com.learn.model.Question;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -100,9 +101,5 @@ public class QuestionService {
             e.printStackTrace();
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
-    }
-
-    public List<Question> findByCategory(String category) {
-        return questionRepository.findByCategory(category);
     }
 }

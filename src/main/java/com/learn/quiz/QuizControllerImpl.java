@@ -1,5 +1,7 @@
 package com.learn.quiz;
 
+import com.learn.model.QuestionWrapper;
+import com.learn.model.Quiz;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,19 +18,14 @@ public class QuizControllerImpl implements QuizController{
 
     @Override
     @PostMapping("/save")
-    public ResponseEntity<HttpStatus> createQuiz(@RequestParam String title, @RequestParam String category, @RequestParam int range) {
-        return quizService.createQuiz(title, category, range);
+    public ResponseEntity<HttpStatus> createQuiz(@RequestParam String title, @RequestParam String category) {
+        return quizService.createQuiz(title, category);
     }
 
     @Override
-    public ResponseEntity<Quiz> getQuizById(Long id) {
-        return null;
-    }
-
-    @Override
-    @GetMapping()
-    public ResponseEntity<List<Quiz>> getAllQuiz() {
-        return quizService.getAllQuiz();
+    @GetMapping("{id}")
+    public ResponseEntity<List<QuestionWrapper>> getQuizById(@PathVariable Long id) {
+        return quizService.getQuizById(id);
     }
 
     @Override

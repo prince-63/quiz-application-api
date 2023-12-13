@@ -1,12 +1,9 @@
-package com.learn.quiz;
+package com.learn.model;
 
 import jakarta.persistence.*;
-
-import com.learn.questions.Question;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.NonNull;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -20,8 +17,8 @@ public class Quiz {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    @NonNull
     private String title;
+    private String category;
     @ManyToMany
     private List<Question> listOfQuestions = new ArrayList<>();
     private LocalDateTime date;

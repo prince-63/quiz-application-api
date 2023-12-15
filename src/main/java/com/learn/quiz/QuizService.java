@@ -4,7 +4,6 @@ import com.learn.model.Question;
 import com.learn.model.QuestionWrapper;
 import com.learn.model.Quiz;
 import com.learn.questions.QuestionRepository;
-import com.learn.questions.QuestionService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -61,6 +60,17 @@ public class QuizService {
         } catch (Exception e) {
             e.printStackTrace();
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+
+    public ResponseEntity<HttpStatus> deleteQuizById(Long id) {
+        try {
+            quizRepository.deleteById(id);
+            return new ResponseEntity<>(HttpStatus.OK);
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
     }
 }

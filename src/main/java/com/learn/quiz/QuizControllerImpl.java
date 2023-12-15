@@ -1,7 +1,6 @@
 package com.learn.quiz;
 
 import com.learn.model.QuestionWrapper;
-import com.learn.model.Quiz;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -29,17 +28,9 @@ public class QuizControllerImpl implements QuizController{
     }
 
     @Override
-    public ResponseEntity<HttpStatus> updateQuizById(Quiz newQuiz, Long id) {
-        return null;
+    @DeleteMapping("{id}")
+    public ResponseEntity<HttpStatus> deleteQuizById(@PathVariable Long id) {
+        return quizService.deleteQuizById(id);
     }
 
-    @Override
-    public ResponseEntity<HttpStatus> deleteQuizById(Long id) {
-        return null;
-    }
-
-    @Override
-    public ResponseEntity<HttpStatus> deleteAllQuiz() {
-        return null;
-    }
 }

@@ -10,7 +10,5 @@ import java.util.List;
 public interface QuizController {
     public ResponseEntity<HttpStatus> createQuiz(String title, String category);
     public ResponseEntity<List<QuestionWrapper>> getQuizById(Long id);
-    public ResponseEntity<HttpStatus> updateQuizById(Quiz newQuiz,Long id);
     public ResponseEntity<HttpStatus> deleteQuizById(Long id);
-    public ResponseEntity<HttpStatus> deleteAllQuiz();
 }

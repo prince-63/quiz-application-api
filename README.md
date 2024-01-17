@@ -1,4 +1,4 @@
-# Quiz Applications
+# Quiz Application API
 
 In the dynamic realm of digital interactions, our quiz application stands as a powerful tool for knowledge-sharing and engagement. 
 
